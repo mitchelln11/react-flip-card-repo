@@ -1,61 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-class CardContent extends React.Component {
-  render() {
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {txt: 'Front Side of Card'}
+    this.update = this.update.bind(this)
+  }
+
+  update( e ) {
+    this.setState({txt: 'Back Side of Card'})
+  }
+
+  render(){
     return (
-      <span>Test Card Content</span>
-    )
-  }
-}
-
-class FlashcardContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   squares: Array(9).fill(null),
-    // };
-  }
-
-  renderSquare(i) {
-    // return <Square value={this.state.squars[i]} />;
-  }
-
-  render() {
-    return (
-      <div class="card">
-
+      <div className="flipcard-outer">
+        <div className="card-content">
+          <h1>{this.state.txt}</h1>
+          <button onClick={this.update}>Test Button</button>
+        </div>
       </div>
+      
     )
   }
 }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div id="card"></div>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-// ReactDOM.render(
-//   <Flashcard />,
-//   document.getElementById("card")
-// )
-
-export default App;
+export default App

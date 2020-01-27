@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Cards extends Component {
     componentDidMount() {
-        fetch('./data.json') // asynchronous, creates a promise
+        fetch('./././data.json') // asynchronous, creates a promise
         .then(res => { // Gets response from above call ^^
           return res.json(); // Returns in json format
         })
@@ -10,7 +10,7 @@ class Cards extends Component {
           console.log(data)
         })
     }
-    
+
     render() {
         // Below example coming from React series from The Net Ninja Youtube channel
         // const cards = this.props;

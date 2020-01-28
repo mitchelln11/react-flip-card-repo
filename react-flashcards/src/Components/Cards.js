@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 
 class Cards extends Component {
+    // componentDidMount() {
+    //     fetch('./././data.json') // asynchronous, creates a promise
+    //     .then(res => { // Gets response from above call ^^
+    //       return res.json(); // Returns in json format
+    //     })
+    //     .then(data => {
+    //       console.log(data)
+    //     })
+    // }
+
     componentDidMount() {
-        fetch('./././data.json') // asynchronous, creates a promise
-        .then(res => { // Gets response from above call ^^
-          return res.json(); // Returns in json format
+        const axios = require('axios');
+        axios.get('http://localhost:3000/collections')
+        .then(function (response) {
+            console.log(response);
         })
-        .then(data => {
-          console.log(data)
+        .catch(function () {
+            console.log('error');
         })
+        .then(function () {
+            console.log('test');
+        });
     }
 
     render() {

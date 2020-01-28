@@ -3,8 +3,7 @@
     {
       "id": 1,
       "title": "React",
-      "cards":
-      [
+      "cards": [
         {
           "id": 1,
           "word": "state",
@@ -25,8 +24,7 @@
     {
       "id": 2,
       "title": "C#",
-      "cards":
-      [
+      "cards": [
         {
           "id": 1,
           "word": "variable",
@@ -41,6 +39,27 @@
           "id": 3,
           "word": "object",
           "definition": "Instance of a class"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "JavaScript",
+      "cards": [
+        {
+          "id": 1,
+          "word": "variable",
+          "definition": "Named space in memory"
+        },
+        {
+          "id": 2,
+          "word": "class",
+          "definition": "Template for an object that consists of member variables, constructor, methods"
+        },
+        {
+          "id": 3,
+          "word": "function",
+          "definition": "A method to use or alter existing data"
         }
       ]
     }

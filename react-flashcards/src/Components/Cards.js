@@ -36,9 +36,7 @@ class Cards extends Component {
             cards.map(card => {
                 return (
                 <div className="card" key={card.id}>
-                    <div className="card-content">
-                        <span className="card-title">{card.title}</span>
-                    </div>
+                    <h2 className="card-title">{card.title}</h2>
                 </div>
                 )
             })
@@ -46,9 +44,7 @@ class Cards extends Component {
 
         return (
             <div className="card-container">
-                <div className="single-card">
-                    {cardList}
-                </div>
+                {cardList}
             </div>
         )
     }

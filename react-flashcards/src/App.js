@@ -13,7 +13,7 @@ class App extends Component { // Line updated
 
   render() { // Added
     return (
-      <div className="App">
+      <div className="App container">
         <h1>First React App</h1>
         <Cards cards={ this.state.cards } />
 

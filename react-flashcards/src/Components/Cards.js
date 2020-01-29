@@ -37,10 +37,13 @@ class Cards extends Component {
                 return (
                 <div className="card" key={card.id}>
                     <h2 className="card-title">{card.title}</h2>
+                    <p>{card.cards[0].word}</p>
+                    <p>{card.cards[0].definition}</p>
                 </div>
                 )
             })
-            ) : (<div className="center">No info available</div> )
+            ) : (<div className="center">No info available</div>
+        )
 
         return (
             <div className="card-container">

@@ -26,6 +26,9 @@ code {
 
   .card {
   background: red;
-  padding: 8%;}
+  padding: 15px;
+  flex:1;
+  margin: 0 5px;
+  text-align: center;}
 
 }

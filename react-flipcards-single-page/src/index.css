@@ -11,24 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/* CUSTOM CODE */
-.container {
-  padding: 0 25px;
-}
-
-@media screen and (min-width: 767px ) {
-
-  .card-container {   
-  display: flex;
-  align-items: center;
-  justify-content: space-between;}
-
-  .card {
-  background: red;
-  padding: 15px;
-  flex:1;
-  margin: 0 5px;
-  text-align: center;}
-
-}

@@ -38,6 +38,16 @@
 }
 
 /*-----------CUSTOM STYLES-----------------*/
+.modal-header {
+  background: #282c34;
+}
+.form-group label {
+  color: #000;
+  text-align:left;
+  display: block;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
 body {
   margin: auto 0;
 }

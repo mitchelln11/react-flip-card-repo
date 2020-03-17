@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+.btn-primary {
+  border:none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -76,6 +80,7 @@ div p strong, div p span {
       display:flex;
       align-items: center;
       justify-content: space-around;
+      flex-wrap: wrap;
   }
   .cards {
       width:30vw;
@@ -118,5 +123,9 @@ div p strong, div p span {
 
   .card-back {
       transform:rotateY(180deg);
+  }
+
+  .card-back button {
+      margin:0 2px;
   }
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import axios from 'axios';
+import ModalAddCard from './Components/AddCard';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +13,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-      //const axios = require('axios');
       let url = "http://localhost:3001/collections"
       fetch(url)
       .then(response => response.json())
@@ -32,6 +33,7 @@ class App extends React.Component {
                                       <span>{words.definition}</span>
                                   </p>
                                   )}
+                                  
                                   <button key={collection.id} className="btn btn-primary" 
                                   onClick={() => this.deleteCollection(collection.id)}>
                                     Delete Card
@@ -51,15 +53,13 @@ class App extends React.Component {
 
   
   /* ---------------------CRUD METHODS--------------------------------- */
-  getCollections() {
-    const axios = require('axios');
-    axios.get('http://localhost:3001/collections')
-    .then(resp => console.log(resp))
-    .catch(err => console.error(err));
-  }
+  // getCollections() {
+  //   axios.get('http://localhost:3001/collections')
+  //   .then(resp => console.log(resp))
+  //   .catch(err => console.error(err));
+  // }
 
   postCollection() {
-    const axios = require('axios');
     axios.post('http://localhost:3001/collections', {
       title: ''
     })
@@ -67,15 +67,13 @@ class App extends React.Component {
     .catch(err => console.error(err));
   }
 
-  putCollection() {
-    const axios = require('axios');
-    axios.put('http://localhost:3001/collections')
+  putCollection(id) {
+    axios.put('http://localhost:3001/collections' + id)
     .then(resp => console.log(resp))
     .catch(err => console.error(err));
   }
 
   deleteCollection(id) {
-    const axios = require('axios');
     return axios.delete('http://localhost:3001/collections/' + id)
     .then(resp => console.log(resp))
     .catch(err => console.error(err));
@@ -108,24 +106,11 @@ class App extends React.Component {
                 </div>
 
                 <div className="modal-body">
-                  <form>
-                    <div className="form-group">
-                      <label htmlFor="cardTitle">Title:</label>
-                      <input type="text" className="form-control" id="cardTitle" aria-describedby="text" placeholder="Enter title definition" />
-                      <label htmlFor="cardState">State:</label>
-                      <input type="text" className="form-control" id="cardState" aria-describedby="text" placeholder="Enter state definition" />
-                      <label htmlFor="cardProps">Props:</label>
-                      <input type="text" className="form-control" id="cardProps" aria-describedby="text" placeholder="Enter props definition" />
-                      <label htmlFor="cardComponent">Component:</label>
-                      <input type="text" className="form-control" id="cardComponent" aria-describedby="text" placeholder="Enter component definition" />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                  </form>
+                  <ModalAddCard />
                 </div>
 
                 <div className="modal-footer">
                   <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" className="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>
